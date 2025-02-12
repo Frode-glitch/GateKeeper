@@ -1,10 +1,17 @@
-# This is a sample Python script.
+from datetime import datetime
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def get_reaction():
+    now = datetime.now()
+    current_hour = int(now.strftime("%H"))
+    if current_hour >= 6 and current_hour <= 12:
+        return  "Goedemorgen"
+    elif current_hour >= 13 and current_hour <= 18:
+        return  "Goedemiddag"
+    elif current_hour >= 19 and current_hour <= 23:
+        return  "Goedenavond"
+    else:
+        return "Sorry, de parkeerplaats is ’s nachts gesloten"
 
 
-
-# Use a breakpoint in the code line below to debug your script.
-print('Welkom bij Fonteyn Vakantieparken')  # Press Ctrl+F8 to toggle the breakpoint.
+print(get_reaction(), '! Welkom bij Fonteyn Vakantieparken')
 
